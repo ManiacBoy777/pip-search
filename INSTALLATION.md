@@ -1,20 +1,36 @@
-# Installation Instructions for Enhanced `pip-search-two`
+# Installation Instructions for pip-search-fix
 
-This document provides instructions for installing the enhanced `pip-search-two` command-line tool, which offers colored/styled output, terminal hyperlinking, and description-based search capabilities. It also includes steps to integrate it with the Fish shell using a custom function.
+This document provides instructions for installing and configuring `pip-search-fix`, an enhanced PyPI package search tool with colored/styled output, terminal hyperlinking, and description-based search capabilities.
 
-## 1. Install the `pip-search-two` Python Package
+## 1. Install the pip-search-fix Package
 
-First, you need to install the `pip-search-two` package. This can be done directly from the cloned repository. Navigate to the directory where you cloned the repository and run the following command:
+First, install the package directly from the repository:
 
 ```bash
-cd /home/ubuntu/pip-search-two && sudo pip3 install -e .
+pip install git+https://github.com/ManiacBoy777/pip-search
 ```
 
-This command installs the package in editable mode, meaning any changes you make to the source code in the `/home/ubuntu/pip-search-two` directory will be reflected immediately without needing to reinstall.
+Or if you cloned the repository locally:
 
-## 2. Configure Fish Shell Function
+```bash
+cd /path/to/pip-search && pip install -e .
+```
 
-To seamlessly integrate `pip-search-two` with your Fish shell, you can create a function that redirects `pip search` commands to `pip-search-two`. This allows you to use `pip search` as usual, but with the enhanced functionality.
+The `-e` flag installs the package in editable mode, meaning any changes you make to the source code will be reflected immediately without needing to reinstall.
+
+## 2. Using pip-search-fix
+
+After installation, you can use the command directly:
+
+```bash
+pip-search-fix requests
+pip-search-fix machine learning
+pip-search-fix web scraping -n 20
+```
+
+## 3. Configure Fish Shell Function (Optional)
+
+To seamlessly integrate `pip-search-fix` with your Fish shell so you can use `pip search` as usual, create a function that redirects `pip search` commands to `pip-search-fix`.
 
 Create a file named `pip.fish` in your `~/.config/fish/functions/` directory with the following content:
 
@@ -24,20 +40,45 @@ function pip
     set -e argv[1]
     switch "$command"
         case 'search'
-            pip-search-two $argv
+            pip-search-fix $argv
         case '*'
             command pip $command $argv
     end
 end
 ```
 
-You can create this file and add the content using the following commands:
+You can create this file using:
 
 ```bash
 mkdir -p ~/.config/fish/functions/
-printf 'function pip\n    set command $argv[1]\n    set -e argv[1]\n    switch "$command"\n        case \'search\'\n            pip-search-two $argv\n        case \'*\'\n            command pip $command $argv\n    end\nend\n' > ~/.config/fish/functions/pip.fish
+cat > ~/.config/fish/functions/pip.fish << 'EOF'
+function pip
+    set command $argv[1]
+    set -e argv[1]
+    switch "$command"
+        case 'search'
+            pip-search-fix $argv
+        case '*'
+            command pip $command $argv
+    end
+end
+EOF
 ```
 
-After creating the file, restart your Fish shell or run `source ~/.config/fish/functions/pip.fish` for the changes to take effect.
+After creating the file, restart your Fish shell or run:
 
-Now, when you run `pip search <your_query>`, it will automatically use the enhanced `pip-search-two` tool.
+```bash
+source ~/.config/fish/functions/pip.fish
+```
+
+Now you can use `pip search` as you normally would, and it will automatically use `pip-search-fix`:
+
+```bash
+pip search requests
+pip search machine learning
+```
+
+## Requirements
+
+- Python >= 3.8
+- requests >= 2.25.0
