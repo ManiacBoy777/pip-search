@@ -1,6 +1,6 @@
 # pip-search
 
-Search PyPI packages from the command-line with enhanced styling, hyperlinking, and description-based search.
+Search PyPI packages from the command-line with enhanced styling like the old `pip search`
 
 ## Installation
 **Using pip:**
