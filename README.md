@@ -5,7 +5,7 @@ Search PyPI packages from the command-line with enhanced styling, hyperlinking, 
 ## Installation
 
 ```bash
-pip install git+https://github.com/ManiacBoy777/pip-search
+pip install git@https://github.com/ManiacBoy777/pip-search
 ```
 
 Or using uv:
@@ -19,7 +19,6 @@ uv pip install -U --system git+https://github.com/ManiacBoy777/pip-search
 ```bash
 pip-search-fix requests
 pip-search-fix machine learning
-pip-search-fix web scraping -n 20
 ```
 
 ## Features
@@ -29,5 +28,3 @@ pip-search-fix web scraping -n 20
 - 🔍 Smart search ranking by name and description
 - ⚡ Concurrent package info fetching
 - 📝 Detailed package information and versions
-
-See [INSTALLATION.md](INSTALLATION.md) for more detailed setup instructions including Fish shell integration.
