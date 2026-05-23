@@ -3,11 +3,11 @@ requires = [ "setuptools>=61.0", "wheel",]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pip-search-two"
+name = "pip-search-fix"
 version = "1.1.0"
 description = "Search PyPI packages from the command-line by scraping the web interface"
 readme = "README.md"
-classifiers = [ "Development Status :: 4 - Beta", "Intended Audience :: Developers", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3.8", "Programming Language :: Python :: 3.9", "Programming Language :: Python :: 3.10", "Programming Language :: Python :: 3.11", "Programming Language :: Python :: 3.12", "Topic :: Software Development :: Libraries :: Python Modules", "Topic :: System :: Software Distribution",]
+classifiers = [ "Development Status :: 4 - Beta", "Intended Audience :: Developers", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3.8", "Programming Language :: Python :: 3.9", "Programming Language :: Python :: 3.10", "Topic :: Software Development :: Libraries",]
 keywords = [ "pip", "pypi", "search", "packages", "command-line",]
 requires-python = ">=3.8"
 dependencies = [ "requests>=2.25.0",]
@@ -19,19 +19,19 @@ email = "talwrii@gmail.com"
 text = "MIT"
 
 [project.urls]
-Homepage = "https://github.com/talwrii/pip-search-two"
-Repository = "https://github.com/talwrii/pip-search-two"
-Issues = "https://github.com/talwrii/pip-search-two/issues"
+Homepage = "https://github.com/ManiacBoy777/pip-search"
+Repository = "https://github.com/ManiacBoy777/pip-search"
+Issues = "https://github.com/ManiacBoy777/pip-search/issues"
 
 [project.scripts]
-pip-search-two = "pip_search_two.main:main"
-ps2 = "pip_search_two.main:main"
+pip-search-fix = "pip_search_fix.main:main"
+psf = "pip_search_fix.main:main"
 
 [project.optional-dependencies]
 dev = [ "black", "flake8", "pytest", "pytest-cov",]
 
 [tool.setuptools]
-packages = [ "pip_search_two",]
+packages = [ "pip_search_fix",]
 
 [tool.black]
 line-length = 88
@@ -43,7 +43,7 @@ max-line-length = 88
 extend-ignore = [ "E203", "W503",]
 
 [tool.setuptools.package-dir]
-pip_search_two = "pip_search_two"
+pip_search_fix = "pip_search_fix"
 
 [tool.pytest.ini_options]
 testpaths = [ "tests",]
