@@ -1,4 +1,4 @@
-# pip-search-two
+# pip-search
 Search pip from the command-line by scraping the web interface.
 
 Avoids pretty TUI-ism. This is a CLI tool that you can pipe into other tools.
