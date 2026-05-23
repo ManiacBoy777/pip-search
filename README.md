@@ -16,9 +16,11 @@ Or using uv:
 uv pip install -U --system git+https://github.com/ManiacBoy777/pip-search
 ```
 
-### Fish pip function (optional)
+### Shell pip functions (optional)
 
-To enhance your Fish shell with the custom pip function, download it to your Fish functions directory:
+To enhance your shell with the custom pip function, download it to your shell's functions directory:
+
+#### Fish pip function
 
 **Using curl:**
 
@@ -30,6 +32,50 @@ curl -fsSL https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/func
 
 ```bash
 wget https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/functions/pip.fish -O ~/.config/fish/functions/pip.fish
+```
+
+#### Bash pip function
+
+**Using curl:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/functions/pip.bash -o ~/.bash_functions
+```
+
+Then add the following to your `~/.bashrc`:
+
+```bash
+if [ -f ~/.bash_functions ]; then
+    source ~/.bash_functions
+fi
+```
+
+**Using wget:**
+
+```bash
+wget https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/functions/pip.bash -O ~/.bash_functions
+```
+
+#### Zsh pip function
+
+**Using curl:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/functions/pip.zsh -o ~/.zsh_functions
+```
+
+Then add the following to your `~/.zshrc`:
+
+```bash
+if [ -f ~/.zsh_functions ]; then
+    source ~/.zsh_functions
+fi
+```
+
+**Using wget:**
+
+```bash
+wget https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/functions/pip.zsh -O ~/.zsh_functions
 ```
 
 ## Usage
