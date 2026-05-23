@@ -1,26 +1,25 @@
-# pip-search-fix
+# pip-search
 
 Search PyPI packages from the command-line with enhanced styling, hyperlinking, and description-based search.
 
 ## Installation
-
-### pip-search-fix package
+**Using pip:**
 
 ```bash
 pip install git@https://github.com/ManiacBoy777/pip-search
 ```
 
-Or using uv:
+**Using uv (Recommended):**
 
 ```bash
 uv pip install -U --system git+https://github.com/ManiacBoy777/pip-search
 ```
 
-### Shell pip functions (optional)
+### Shell pip functions (optional but recommended for ease of use)
 
-To enhance your shell with the custom pip function, download it to your shell's functions directory:
+To use it like normal `pip search` worked in the past, download the shell function to your shell's functions directory:
 
-#### Fish pip function
+#### Fish
 
 **Using curl:**
 
@@ -34,7 +33,7 @@ curl -fsSL https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/func
 wget https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/functions/pip.fish -O ~/.config/fish/functions/pip.fish
 ```
 
-#### Bash pip function
+#### Bash
 
 **Using curl:**
 
@@ -56,7 +55,7 @@ fi
 wget https://raw.githubusercontent.com/ManiacBoy777/pip-search/master/functions/pip.bash -O ~/.bash_functions
 ```
 
-#### Zsh pip function
+#### Zsh
 
 **Using curl:**
 
